@@ -20,6 +20,19 @@ Works on macOS, Linux, and Windows, with support for both x86_64 and arm64 archi
     pip install docling --extra-index-url https://download.pytorch.org/whl/cpu
     ```
 
+??? "ePub Support"
+
+    Docling includes built-in support for ePub documents through the `ebooklib` package. No additional installation steps are required as the dependency is included by default.
+
+    The ePub backend supports:
+    - ePub 2.0 and 3.0 formats
+    - Fixed and reflowable layouts
+    - Embedded images and multimedia content
+    - Complex document structures
+    - Metadata extraction
+    - Table of contents
+    - Footnotes and endnotes
+
 ??? "Alternative OCR engines"
 
     Docling supports multiple OCR engines for processing scanned documents. The current version provides

@@ -11,7 +11,36 @@ source = "https://arxiv.org/pdf/2408.09869"  # PDF path or URL
 converter = DocumentConverter()
 result = converter.convert(source)
 print(result.document.export_to_markdown())  # output: "### Docling Technical Report[...]"
+
+### Convert an ePub document
+
+Docling also supports ePub documents, preserving their structure, metadata, and formatting:
+
+```python
+from docling.document_converter import DocumentConverter
+
+source = "path/to/book.epub"  # ePub file path or URL
+converter = DocumentConverter()
+result = converter.convert(source)
+
+# Export to markdown with preserved structure
+markdown_output = result.document.export_to_markdown()
+
+# Access metadata
+metadata = result.document.metadata  # title, author, etc.
+
+# Access table of contents
+toc = result.document.toc
 ```
+
+The ePub converter preserves:
+- Document structure (chapters, sections)
+- Metadata (title, author, language, etc.)
+- Table of contents
+- Images with original dimensions
+- Text styling (emphasis, code blocks, etc.)
+- Footnotes and endnotes
+- Links and references
 
 ### CLI
 

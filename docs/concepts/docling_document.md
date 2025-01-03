@@ -55,7 +55,32 @@ top-level `groups` field.
 
 ![doc_hierarchy_2](../assets/docling_doc_hierarchy_2.png)
 
-<!--
+### ePub Documents
+
+For ePub documents, the `DoclingDocument` structure preserves the unique features of ePub files:
+
+- **Metadata**: Title, author, language, and other Dublin Core metadata are stored in the document's metadata section.
+- **Table of Contents**: The ePub's table of contents is preserved in the document structure, with each chapter and section properly nested.
+- **Content Structure**: Each chapter is represented as a group in the `groups` field, containing its text content, images, and other elements.
+- **Text Styling**: Special text formatting (emphasis, code blocks, etc.) is preserved through appropriate `TextItem` labels.
+- **Images**: Pictures from the ePub are stored as `PictureItem` instances, maintaining their original dimensions and metadata.
+- **Notes**: Footnotes and endnotes are preserved with proper linking to their references in the text.
+
+Here's an example of how an ePub chapter is represented:
+
+```yaml
+groups:
+  - name: "Chapter 1"
+    label: "section"
+    self_ref: "#/groups/0"
+    parent: "#/body"
+    children:
+      - "#/texts/0"  # Chapter title
+      - "#/texts/1"  # Chapter content
+      - "#/pictures/0"  # Chapter image
+      - "#/texts/2"  # Footnote
+```
+
 ### Tables
 
 TBD
@@ -67,4 +92,3 @@ TBD
 ### Provenance
 
 TBD
- -->
