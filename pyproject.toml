@@ -48,6 +48,7 @@ pandas = "^2.1.4"
 marko = "^2.1.2"
 openpyxl = "^3.1.5"
 lxml = ">=4.0.0,<6.0.0"
+ebooklib = "^0.17.1"
 ocrmac = { version = "^1.0.0", markers = "sys_platform == 'darwin'", optional = true }
 rapidocr-onnxruntime = { version = "^1.4.0", optional = true, markers = "python_version < '3.13'" }
 onnxruntime = [

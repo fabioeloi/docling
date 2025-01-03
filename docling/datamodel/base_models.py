@@ -40,6 +40,7 @@ class InputFormat(str, Enum):
     MD = "md"
     XLSX = "xlsx"
     XML_USPTO = "xml_uspto"
+    EPUB = "epub"
 
 
 class OutputFormat(str, Enum):
@@ -61,6 +62,7 @@ FormatToExtensions: Dict[InputFormat, List[str]] = {
     InputFormat.ASCIIDOC: ["adoc", "asciidoc", "asc"],
     InputFormat.XLSX: ["xlsx"],
     InputFormat.XML_USPTO: ["xml", "txt"],
+    InputFormat.EPUB: ["epub"],
 }
 
 FormatToMimeType: Dict[InputFormat, List[str]] = {
@@ -89,6 +91,7 @@ FormatToMimeType: Dict[InputFormat, List[str]] = {
         "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
     ],
     InputFormat.XML_USPTO: ["application/xml", "text/plain"],
+    InputFormat.EPUB: ["application/epub+zip"],
 }
 
 MimeTypeToFormat: dict[str, list[InputFormat]] = {
